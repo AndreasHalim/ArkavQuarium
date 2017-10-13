@@ -26,7 +26,7 @@ boolean IsEmpty (Stack S)
   return (Top(S) == 0);
 }
 
-boolean IsFull (Stack S);
+boolean IsFull (Stack S)
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 {
 // ALGORITMA
