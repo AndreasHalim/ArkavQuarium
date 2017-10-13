@@ -52,5 +52,5 @@ void Pop (Stack * S, infotype* X)
 {
 // ALGORITMA
   *X = InfoTop(*S);
-  
+  Top(*S)--;
 }
