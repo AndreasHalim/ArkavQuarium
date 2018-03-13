@@ -6,6 +6,9 @@ public:
 	~Coin();
 	Coin(const Coin&);
 	Coin& operator=(const Coin&);
+
+	int getValue();
+	void setValue(int value);
 private:
 	int value;
 }

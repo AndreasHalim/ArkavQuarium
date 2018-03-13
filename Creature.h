@@ -9,6 +9,9 @@ public:
 	Creature& operator=(const Creature&);
 
 	void eat(Aquarium&, Item&);
+
+	int getDirection();
+	void setDirection(int direction);
 private:
 	int direction;
 }

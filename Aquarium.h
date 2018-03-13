@@ -8,6 +8,8 @@ public:
 	Aquarium(const Aquarium&);
 	Aquarium& operator=(const Aquarium&);
 
+	int getSize();
+
 	LList<Entity> getLinkedList(int x, int y) const;
 	void insertEntity(Entity e, int x, int y);
 private:
