@@ -1,5 +1,6 @@
 #include "LList.h"
 #include "Aquarium.h"
+#include "Entity.h"
 
 class Aquarium {
 public:
@@ -12,6 +13,7 @@ public:
 
 	LList<Entity> getLinkedList(int x, int y) const;
 	void insertEntity(Entity e, int x, int y);
+	Entity delEntity(int x, int y);
 private:
 	LList<Entity>** Map;
 	const int size= 100;
