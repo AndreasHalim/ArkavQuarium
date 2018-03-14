@@ -5,7 +5,7 @@ public:
 	Entity(const Entity&);
 	Entity& operator=(const Entity&);
 
-	void move(int x, int y);
+	virtual void move(int x, int y);
 
 	int getSpeed();
 	int getX();
