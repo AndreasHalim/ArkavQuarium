@@ -1,11 +1,16 @@
+#ifndef ENTITY_H
+#define ENTITY_H
+
+#include "Aquarium.h"
+
 class Entity {
 public:
-	Entity(int x,int y, int speed);
+	Entity(int x, int y, int speed);
 	~Entity();
 	Entity(const Entity&);
 	Entity& operator=(const Entity&);
 
-	virtual void move(int x, int y);
+	virtual void move(int x, int y)=0;
 
 	int getSpeed();
 	int getX();
@@ -23,3 +28,5 @@ private:
 	int id;
 	static int count;
 }
+
+#endif

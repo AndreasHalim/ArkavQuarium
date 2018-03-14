@@ -1,5 +1,7 @@
+#ifndef CREATURE_H
+#define CREATURE_H
+
 #include "Entity.h"
-#include "Aquarium.h"
 
 class Creature: public Entity {
 public:
@@ -8,10 +10,12 @@ public:
 	Creature(const Creature&);
 	Creature& operator=(const Creature&);
 
-	void eat(Aquarium&, Item&);
+	virtual void eat(Aquarium&, Item&) = 0;
 
 	int getDirection();
 	void setDirection(int direction);
 private:
 	int direction;
 }
+
+#endif

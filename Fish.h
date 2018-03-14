@@ -1,14 +1,12 @@
-#include "Aquarium.h"
-#include "Creature.h"
+#ifndef FISH_H
+#define FISH_H
 
-class Fish : public Creature {
+//INTERFACE FISH
+class Fish{
 	public:
-		Fish(int x, int y, int direction);
-		~Fish();
-		Fish(const Fish&);
-		Fish& operator=(const Fish&);
-		
-		void grow();
-		void death();
-		void spawnCoin(Aquarium&);
+		virtual void grow()=0;
+		virtual void death()=0;
+		virtual void spawnCoin(Aquarium&)=0;
 }
+
+#endif
