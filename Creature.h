@@ -3,7 +3,7 @@
 
 class Creature: public Entity {
 public:
-	Creature(int x, int y, int direction);
+	Creature(int x, int y, int speed, int direction);
 	~Creature();
 	Creature(const Creature&);
 	Creature& operator=(const Creature&);
