@@ -11,7 +11,7 @@ using namespace std;
 /* SPEED PADA ITEM MAUPUN TURUNANNYA ADALAH 1, MASIH MERUPAKAN ASUMSI */
 
 /* Constructor */
-Item::Item(int x, int y): Entity(x, y, 1) {}
+Item::Item(int x, int y): Entity(x, y, 1, 2) {}
 /* Saat kelas ini diimplementasikan, kelas Entity belum lengkap parameternya untuk direction (arah), sehingga
  * Entity diasumsikan sebagai Entity(int x, int y, int speed, int direction). Arah untuk 2 adalah turun
  * Abaikan jika Entity sudah diperbaiki */
