@@ -3,12 +3,11 @@
 
 class Fish : public Creature {
 	public:
-		Fish(int x, int y, int direction);
+		Fish(int x, int y, int speed, int direction); // Perubahan: nambah speed
 		~Fish();
 		Fish(const Fish&);
 		Fish& operator=(const Fish&);
-		
-		void grow();
+
 		void death();
 		void spawnCoin(Aquarium&);
 }
