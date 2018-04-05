@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 /* Elemen Linked List */
 template <class T>
 class ElmtLList{
