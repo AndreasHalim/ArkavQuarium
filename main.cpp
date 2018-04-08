@@ -2,12 +2,19 @@
 #include <iostream>
 #include <math.h>
 #include <sstream>
+#include <time.h>
+#include <cstdlib>
+#include <stdio.h>
 
 const double speed = 50; // pixels per second
 
 int main( int argc, char* args[] )
 {
     init();
+    srand (time(NULL));
+    double vrandx = SCREEN_HEIGHT / 2;
+    double vrandy = SCREEN_WIDTH / 2;
+    bool random = false;
 
     // Menghitung FPS
     int frames_passed = 0;
@@ -30,6 +37,48 @@ int main( int argc, char* args[] )
         handle_input();
         if (quit_pressed()) {
             running = false;
+        }
+
+
+        if(random){
+            vrandx = rand() % SCREEN_WIDTH;
+            vrandy = rand() % SCREEN_HEIGHT;
+        }
+
+        if(random){
+            random = false;
+        }
+        else{
+            if(vrandx < cx+(speed * sec_since_last) && vrandx < cx-(speed * sec_since_last)){
+                cx = cx - speed * sec_since_last;
+                if(vrandy < cy+(speed * sec_since_last) && vrandy < cy-(speed * sec_since_last)){
+                    cy = cy - speed * sec_since_last;
+                }
+                else if(vrandy > cy+(speed * sec_since_last) && vrandy > cy-(speed * sec_since_last)){
+                    cy = cy + speed * sec_since_last;
+                }
+            }
+            else if(vrandx > cx+(speed * sec_since_last) && vrandx > cx-(speed * sec_since_last)){
+                cx = cx + speed * sec_since_last;
+                if(vrandy < cy+(speed * sec_since_last) && vrandy < cy-(speed * sec_since_last)){
+                    cy = cy - speed * sec_since_last;
+                }
+                else if(vrandy > cy+(speed * sec_since_last) && vrandy > cy-(speed * sec_since_last)){
+                    cy = cy + speed * sec_since_last;
+                }
+            }
+            else {
+                    random = true;
+                if(vrandy < cy+(speed * sec_since_last) && vrandy < cy-(speed * sec_since_last)){
+                    cy = cy - speed * sec_since_last;
+                }
+                else if(vrandy > cy+(speed * sec_since_last) && vrandy > cy-(speed * sec_since_last)){
+                    cy = cy + speed * sec_since_last;
+                }
+                else{
+                    random = true;
+                }
+            }
         }
 
         // Gerakkan ikan selama tombol panah ditekan
@@ -64,6 +113,8 @@ int main( int argc, char* args[] )
             case SDLK_x:
                 running = false;
                 break;
+            case SDLK_g:
+                break;
             }
         }
 
@@ -90,3 +141,4 @@ int main( int argc, char* args[] )
 
     return 0;
 }
+
