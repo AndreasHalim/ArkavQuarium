@@ -1,4 +1,5 @@
 #include "Entity.h"
+
 Entity::Entity(int x, int y, int speed):id(count){
 	this->x = x;
 	this->y = y;
